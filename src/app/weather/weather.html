@@ -1,0 +1,33 @@
+
+  @if(report() | async; as data){
+
+  <div class="card weather-card text-center">
+    <div class="card-body">
+      <img src="https://openweathermap.org/img/wn/{{data.weather[0].icon}}@2x.png" alt="{{data.weather[0].description}}" class="weather-img mb-2">
+     <!-- {{data.weather[0].description}} -->
+      <h5 class="card-title">{{newCityName()}}</h5>
+     
+      <div class="temp mb-1">{{data.main.temp - 273 | number : '1.2-2'}}°C</div>
+      <div class="label mb-3">Feels like {{data.main.feels_like - 273 | number : '1.2-2'}}°C</div>
+
+      <div class="row">
+        <div class="col">
+          <div class="label">Min</div> 
+          <div>{{data.main.temp_min - 273| number : '1.2-2'}}°C</div>
+        </div>
+        <div class="col">
+          <div class="label">Max</div>
+          <div>{{data.main.temp_max - 273| number : '1.2-2'}}°C</div>
+        </div>
+        <div class="col">
+          <div class="label">Sunrise</div>
+          <div>{{data.sys.sunrise * 1000 | date:'shortTime'}}</div>
+        </div>
+        <div class="col">
+          <div class="label">Sunset</div>
+          <div>{{data.sys.sunset * 1000 | date:'shortTime'}}</div>
+        </div>
+      </div>
+    </div>
+  </div>
+}

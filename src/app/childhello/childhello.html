@@ -1,0 +1,12 @@
+<h3>{{filter()}}</h3>
+<table class="table table-striped"> 
+    @for(a of filteredData; track $index;){
+        <tr>
+            <td>{{a.id}}</td>
+            <td>{{a.name}}</td>
+            <td>{{a.phone}}</td>
+            <td>{{a.email}}</td>
+            <td>{{a.address}}</td>
+        </tr>
+    }
+</table>

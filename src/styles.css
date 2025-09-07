@@ -1,1 +1,24 @@
-/* You can add global styles to this file, and also import other style files */
+.strikethrough {
+  text-decoration: line-through;
+  text-emphasis-color: green;
+  font-weight: bold;
+}/* You can add global styles to this file, and also import other style files */
+
+   .weather-card {
+      max-width: 400px;
+      margin: 40px auto;
+      border: 1px solid #ddd;
+    }
+    .temp {
+      font-size: 2rem;
+      font-weight: 600;
+    }
+    .label {
+      font-size: 0.9rem;
+      color: #555;
+    }
+    .weather-img {
+      width: 100px;
+      height: 100px;
+      object-fit: contain;
+    }
