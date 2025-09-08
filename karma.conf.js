@@ -6,11 +6,11 @@
 //   }
 // }
 
-module.exports = function(config) {
+export default function(config) {
   config.set({
     basePath: '../..',
     frameworks: ['jasmine'],
-    browsers: ['ChromeHeadlessNoSandbox'],
+    browsers: ['ChromeHeadlessNoSandbox', 'Safari'],
 customLaunchers: {
   ChromeHeadlessNoSandbox: {
     base: 'ChromeHeadless',
