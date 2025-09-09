@@ -11,7 +11,7 @@ on:
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: windows-latest
     permissions:
       contents: read #This is required for actions/checkout
 
@@ -28,7 +28,7 @@ jobs:
           npm install
           npm run build --if-present
           npm run test --if-present
-
+      
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v4
         with:
@@ -51,13 +51,13 @@ jobs:
       - name: Login to Azure
         uses: azure/login@v2
         with:
-          client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID_08BA4853D3794685A84B70BE72DC268A }}
-          tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_AFDD30C8FB504D5BA618DBC234389CB4 }}
-          subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_3BFDCC8710374235B6DD0391A778CC63 }}
+          client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID_49E8F365ECD74E67A556E960AFD185F4 }}
+          tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_80B9ED55390342E9BE352201D1E27D93 }}
+          subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_7A4B313CF3094E5586495E6408A854FF }}
 
       - name: 'Deploy to Azure Web App'
-        id: deploy-to-webapp
         uses: azure/webapps-deploy@v3
+        id: deploy-to-webapp
         with:
           app-name: 'weatherreport1'
           slot-name: 'Production'
